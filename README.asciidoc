@@ -1,0 +1,55 @@
+joejulian-freeswitch
+--------------------
+:source-highlighter: pygments
+:pygments-css: class
+
+This is a freeswitch module to install and run freeswitch
+
+Directions
+~~~~~~~~~~
+
+To install freeswitch and configure it with the configuration tree at
+/var/lib/puppet/files/freeswitch/conf use
+
+[source,ruby]
+----
+  class { 'freeswitch':
+    conf_source => 'puppet:///files/freeswitch/conf',
+  }
+----
+
+or to install freeswitch and configure it using that same file base
+using heira, but build it at commit
+384ddf1517be4a3b9080a3ed8667a63156073144
+
+[source,ruby]
+----
+  class { 'freeswitch': }
+----
+
+and, in your hiera yaml file
+
+[source,yaml]
+----
+  ---
+    freeswitch::freeswitch_version: '384ddf1517be4a3b9080a3ed8667a63156073144'
+    freeswitch::conf_source:        'puppet:///files/freeswitch/conf'
+----
+
+
+License
+~~~~~~~
+Copyright (c) 2014 Joe Julian <me@joejulian.name>
+
+GPLv3
+
+Contact
+~~~~~~~
+Joe Julian <me@joejulian.name>
+
+irc://irc.freenode.org/#freeswitch
+
+Support
+~~~~~~~
+
+Please log tickets and issues at http://github.com/joejulian/joejulian-freeswitch/issues[Github]
