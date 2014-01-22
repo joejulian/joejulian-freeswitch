@@ -36,7 +36,8 @@
 # Copyright 2014 Your name here, unless otherwise noted.
 #
 class freeswitch (
-  $freeswitch_version = undef
+  $freeswitch_version = undef,
+  $conf_source = undef
 ){
   freeswitch::packageplus { 'ghostscript': }
 
@@ -85,6 +86,8 @@ class freeswitch (
     owner  => 'root',
     group  => 'root',
   }
+
+  freeswitch::conf { $conf_source: }
 
   service { 'freeswitch':
     ensure => running,
