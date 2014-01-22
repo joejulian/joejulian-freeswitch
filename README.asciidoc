@@ -3,6 +3,7 @@ joejulian-freeswitch
 :source-highlighter: pygments
 :pygments-css: class
 
+
 This is a freeswitch module to install and run freeswitch
 
 Directions
@@ -36,6 +37,12 @@ and, in your hiera yaml file
     freeswitch::conf_source:        'puppet:///files/freeswitch/conf'
 ----
 
+[NOTE]
+====
+This is a quick and dirty module written to get one machine up and
+running quickly. This probably does not support more than EL6 based
+distros. Contributions and feature requests/bug reports welcome.
+====
 
 License
 ~~~~~~~
